@@ -92,7 +92,6 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
             .requestMatchers("/api/test/**").permitAll()
             .requestMatchers("/customer/**").permitAll()
             .requestMatchers("/house/**").permitAll()
-            .requestMatchers("/hangts/**").permitAll()
             .requestMatchers("/api.openweathermap").permitAll()
             .requestMatchers("/file-manager").permitAll()
             .anyRequest().authenticated()
