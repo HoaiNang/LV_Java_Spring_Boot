@@ -5,18 +5,27 @@ import java.util.Set;
 import jakarta.validation.constraints.*;
 
 public class SignupRequest {
-  @NotBlank
   @Size(min = 3, max = 20)
   private String username;
 
-  @NotBlank
   @Size(max = 50)
   @Email
   private String email;
 
+  @Size(max = 50)
+  private String fullname;
+
+  @Size(max = 50)
+  private String sCCCD;
+
+  @Size(max = 50)
+  private String phone;
+
+  @Size(max = 50)
+  private String repassword;
+
   private Set<String> role;
 
-  @NotBlank
   @Size(min = 6, max = 40)
   private String password;
 
@@ -51,4 +60,40 @@ public class SignupRequest {
   public void setRole(Set<String> role) {
     this.role = role;
   }
+
+public void setFullname(String fullname) {
+    this.fullname = fullname;
+  }
+
+  public void setCCCD(String cCCD) {
+    this.sCCCD = cCCD;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  public void setRepassword(String repassword) {
+    this.repassword = repassword;
+  }
+
+public String getFullname() {
+    return fullname;
+}
+
+public String getPhone() {
+    return phone;
+}
+
+public String getCCCD() {
+    return sCCCD;
+}
+
+public String getRepassword() {
+    return repassword;
+}
+
+public boolean isActive() {
+    return false;
+}
 }

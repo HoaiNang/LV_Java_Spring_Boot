@@ -90,10 +90,13 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       .authorizeHttpRequests(auth -> 
         auth.requestMatchers("/api/auth/**").permitAll()
             .requestMatchers("/api/test/**").permitAll()
-            .requestMatchers("/customer/**").permitAll()
+            .requestMatchers("/user/**").permitAll()
             .requestMatchers("/house/**").permitAll()
+            .requestMatchers("/comments/**").permitAll()
+            .requestMatchers("/contacts/**").permitAll()
+            .requestMatchers("/images/**").permitAll()
             .requestMatchers("/api.openweathermap").permitAll()
-            .requestMatchers("/file-manager").permitAll()
+            .requestMatchers("/vnpay").permitAll()
             .anyRequest().authenticated()
       ).cors(Customizer.withDefaults());
   
