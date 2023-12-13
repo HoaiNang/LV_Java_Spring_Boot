@@ -1,11 +1,14 @@
 package com.bezkoder.springjwt.models;
-
+import com.bezkoder.springjwt.entity.LuuAnh;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "house")
@@ -38,12 +41,6 @@ public class House {
 
     @Column(length = 255, name = "Number_blank_room")
     private int nbroom;
-
-    @Column(length = 255, name = "Coordination")
-    private String coords;
-
-    @Column(length = 255, name = "Image_url")
-    private String urls;
 
     @Column(name = "user_id")
     private int user_id;
@@ -112,13 +109,6 @@ public class House {
         this.nbroom = nbroom;
     }
 
-    public String getUrl() {
-        return urls;
-    }
-
-    public void setUrl(String urls) {
-        this.urls = urls;
-    }
 
     public int getUser_id() {
         return user_id;
@@ -128,16 +118,9 @@ public class House {
         this.user_id = user_id;
     }
 
-    public String getCoords() {
-        return coords;
-    }
-
-    public void setCoords(String coords) {
-        this.coords = coords;
-    }
 
     public House(int id, String titles, String desc, String addr, String phone, float rent_price, int nroom, int nbroom,
-            String coords, String urls, int user_id) {
+              int user_id) {
         this.id = id;
         this.titles = titles;
         this.desc = desc;
@@ -146,16 +129,13 @@ public class House {
         this.rent_price = rent_price;
         this.nroom = nroom;
         this.nbroom = nbroom;
-        this.coords = coords;
-        this.urls = urls;
         this.user_id = user_id;
     }
 
     @Override
     public String toString() {
         return "House [id=" + id + ", title=" + titles + ", desc=" + desc + ", addr=" + addr + ", phone=" + phone
-                + ", rent_price=" + rent_price + ", nroom=" + nroom + ", nbroom=" + nbroom + ", coords=" + coords
-                + ", url=" + urls + ", user_id=" + user_id + "]";
+                + ", rent_price=" + rent_price + ", nroom=" + nroom + ", nbroom=" + nbroom + ", user_id=" + user_id + "]";
     }
 
     

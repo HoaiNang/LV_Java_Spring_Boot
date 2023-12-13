@@ -43,9 +43,7 @@ public class HouseController {
             house.setRent_price(houseDetails.getRent_price());
             house.setNroom(houseDetails.getNroom());
             house.setNbroom(houseDetails.getNbroom());
-            house.setUrl(houseDetails.getUrl());
             house.setUser_id(houseDetails.getUser_id());
-            house.setCoords(houseDetails.getCoords());
             return houseRepository.save(house);
         }
         return null;
